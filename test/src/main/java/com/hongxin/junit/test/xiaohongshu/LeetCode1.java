@@ -1,6 +1,8 @@
 package com.hongxin.junit.test.xiaohongshu;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class LeetCode1 {
     public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class LeetCode1 {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
             if (map.containsKey(tag - arr[i])) {
+
                 return new int[]{map.get(tag - arr[i]),i};
             }else{
                 map.put(arr[i], i);
@@ -26,4 +29,8 @@ public class LeetCode1 {
         return null;
 
     }
+
+
+
+
 }
