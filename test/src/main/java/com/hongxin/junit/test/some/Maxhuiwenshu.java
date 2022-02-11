@@ -1,4 +1,4 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
 //最长回文数
 public class Maxhuiwenshu {

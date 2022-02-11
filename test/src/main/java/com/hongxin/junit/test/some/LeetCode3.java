@@ -1,8 +1,7 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class LeetCode3 {

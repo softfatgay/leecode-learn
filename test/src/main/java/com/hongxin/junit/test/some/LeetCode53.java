@@ -1,4 +1,4 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
 public class LeetCode53 {
     public static void main(String[] args) {

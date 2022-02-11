@@ -1,9 +1,8 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
 import com.hongxin.junit.test.tree.TreeNode;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class LeetCode662 {
 

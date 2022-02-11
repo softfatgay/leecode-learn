@@ -1,8 +1,6 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class LeetCode1 {
     public static void main(String[] args) {

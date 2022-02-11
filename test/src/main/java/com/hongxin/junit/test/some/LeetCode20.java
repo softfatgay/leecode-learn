@@ -1,4 +1,4 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
 import java.util.Deque;
 import java.util.HashMap;

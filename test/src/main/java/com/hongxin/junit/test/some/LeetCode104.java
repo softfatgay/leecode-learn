@@ -1,6 +1,5 @@
-package com.hongxin.junit.test.xiaohongshu;
+package com.hongxin.junit.test.some;
 
-import com.hongxin.junit.test.listNode.ListNode;
 import com.hongxin.junit.test.tree.TreeNode;
 
 public class LeetCode104 {
