@@ -1,5 +1,7 @@
 package com.hongxin.junit.test.some;
 
+import com.sun.tools.javac.util.StringUtils;
+
 public class LeetCode494 {
 
    static int count = 0;
@@ -10,6 +12,7 @@ public class LeetCode494 {
         int sum = 0;
         backToAnd(arr,target,0,sum);
 
+        String a = "";
 
         System.out.println(count);
     }
