@@ -5,12 +5,13 @@ import java.util.HashMap;
 public class LeetCode1 {
     public static void main(String[] args) {
 
-        int[] arr = {2,9,11,20};
-        int[] newArr = getIndex(arr, 31);
+//        int[] arr = {2,9,11,20};
+//        int[] newArr = getIndex(arr, 31);
+//
+//        for (int i : newArr) {
+//            System.out.println(i);
+//        }
 
-        for (int i : newArr) {
-            System.out.println(i);
-        }
 
     }
 
