@@ -4,19 +4,42 @@ public class LeetCode42 {
 
     public static void main(String[] args) {
         int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
-        getMaxArray(arr);
+        int maxArray = getMaxArray(arr);
+
+        System.out.println(maxArray);
+
+        String s = "hello";
+        revertStr(s);
     }
 
-    private static void getMaxArray(int[] arr) {
+    private static void revertStr(String s) {
+        int n = s.length();
+        int l = 0;
+        int r = n - 1;
+        while (l < r) {
+            char tem = s.charAt(l);
+
+
+        }
+
+    }
+
+    private static int getMaxArray(int[] arr) {
 
         int pre = arr[0];
-        int cur = Math.max(pre, pre + arr[1]);
+        int max = arr[0];
 
 
-        int  max = Math.max(cur,pre);
-        for (int i = 2; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
+            pre = Math.max(pre + arr[i], arr[i]);
+            max = Math.max(pre, max);
         }
+
+        return  max;
     }
+
+
+
 
 
 }
