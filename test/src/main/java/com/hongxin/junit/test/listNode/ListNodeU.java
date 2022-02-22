@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ListNodeU {
 
     public static ListNode getListNode(int[] arr) {
-        Arrays.sort(arr);
+//        Arrays.sort(arr);
 
         ListNode head = new ListNode(arr[0]);
         ListNode cur = head;
