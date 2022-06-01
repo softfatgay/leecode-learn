@@ -9,9 +9,11 @@ public class LeetCode02 {
 
         int[] arr = {1, 2, 3, 4, 5};
         ListNode node = ListNodeU.getListNode(arr);
-        ListNode target = getTargetIndex(node, 2);
-        System.out.println(target.val);
+//        ListNode target = getTargetIndex(node, 2);
+//        System.out.println(target.val);
 
+
+        revers(node);
 
 
 //        revertNode(node);
@@ -45,6 +47,20 @@ public class LeetCode02 {
         ListNodeU.printNode(pre);
     }
 
+
+    private static void revers(ListNode node) {
+        ListNode pre = null;
+        ListNode cur = node;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        ListNodeU.printNode(pre);
+
+    }
 
 
 }

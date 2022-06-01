@@ -11,7 +11,10 @@ public class LeetCode16 {
 
         int solution = solution(arr, target);
         System.out.println(solution);
+
     }
+
+
 
     private static int solution(int[] arr, int target) {
         Arrays.sort(arr);
@@ -42,4 +45,6 @@ public class LeetCode16 {
 
         return res;
     }
+
+
 }

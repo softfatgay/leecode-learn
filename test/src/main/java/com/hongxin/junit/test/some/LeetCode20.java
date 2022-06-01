@@ -9,13 +9,11 @@ public class LeetCode20 {
 
     public static void main(String[] args) {
         String aaa = "{[{}]}";
-//        boolean valid = isValid(aaa);
+        boolean valid = isValid(aaa);
+        System.out.println(valid);
 
-
-
-
-        boolean aTrue = isTrue(aaa);
-        System.out.println(aTrue);
+//        boolean aTrue = isTrue(aaa);
+//        System.out.println(aTrue);
     }
 
     private static boolean isTrue(String aaa) {
@@ -24,25 +22,49 @@ public class LeetCode20 {
         if (aaa.length() % 2 != 0) {
             return false;
         }
-
+        Character prePut = null;
         for (int i = 0; i < aaa.length(); i++) {
             if (isLeft(aaa.charAt(i))) {
                 stack.push(aaa.charAt(i));
-            }else {
+                prePut = aaa.charAt(i);
+            } else {
                 stack.pop();
+                Character last = null;
+                if (!stack.isEmpty()) {
+                    last = stack.getLast();
+                }
+                if (isMatch(last,prePut)) {
+                    prePut = last;
+                    continue;
+                } else {
+                    return false;
+                }
             }
         }
-
         return stack.isEmpty();
+    }
 
+    private static boolean isMatch(Character last, Character prePut) {
+        if (last == '{' && prePut == '}') {
+            return true;
+        }
+        if (last == '[' && prePut == ']') {
+            return true;
+        }
+        if (last == '(' && prePut == ')') {
+            return true;
+        }
+        return false;
     }
 
     private static boolean isLeft(char charAt) {
         if (charAt == '{') {
             return true;
-        }if (charAt == '(') {
+        }
+        if (charAt == '(') {
             return true;
-        }if (charAt == '[') {
+        }
+        if (charAt == '[') {
             return true;
         }
         return false;

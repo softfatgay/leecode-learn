@@ -2,6 +2,7 @@ package com.hongxin.junit.test.array;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
@@ -29,6 +30,7 @@ public class TwoAnd {
             }
             map.put(arr[i], i);
         }
+
 
         return new int[]{-1, -1};
     }

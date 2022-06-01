@@ -12,7 +12,14 @@ public class LeetCode21 {
         ListNode node1 = ListNodeU.getListNode(arr1);
 
 
-        mergeListNode(node, node1);
+//        mergeListNode(node, node1);
+
+        ListNode node2 = mergeListNode1(node, node1);
+
+
+        ListNodeU.printNode(node2);
+
+
     }
 
     private static void mergeListNode(ListNode node, ListNode node1) {
@@ -36,6 +43,29 @@ public class LeetCode21 {
         cur.next = m == null ? n : m;
 
         ListNodeU.printNode(head.next);
+    }
+
+
+    private static ListNode mergeListNode1(ListNode m1, ListNode n1) {
+        ListNode m = m1;
+        ListNode n = n1;
+        ListNode res = new ListNode(-1);
+        ListNode head = res;
+        while (m != null && n != null) {
+            if (m.val > n.val) {
+                res.next = n;
+                n = n.next;
+            } else {
+                res.next = m;
+                m = m.next;
+            }
+
+            res = res.next;
+        }
+
+        res.next = m == null ? n : m;
+
+        return head.next;
     }
 
 

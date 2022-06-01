@@ -138,4 +138,16 @@ public class AActivity extends AppCompatActivity {
         super.onDestroy();
         Log.e("==a_activity", "onDestroy");
     }
+
+
+
+
+    private Handler handler = new Handler();
+
+
+
+    private void  test(){
+
+        Looper.prepare();
+    }
 }

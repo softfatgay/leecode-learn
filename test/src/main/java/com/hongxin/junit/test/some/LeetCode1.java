@@ -1,6 +1,7 @@
 package com.hongxin.junit.test.some;
 
 import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class LeetCode1 {
     public static void main(String[] args) {
@@ -12,6 +13,9 @@ public class LeetCode1 {
 //            System.out.println(i);
 //        }
 
+
+
+        System.out.println(2|-2);
 
     }
 
@@ -28,8 +32,5 @@ public class LeetCode1 {
         return null;
 
     }
-
-
-
 
 }

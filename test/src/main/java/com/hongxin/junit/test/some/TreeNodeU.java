@@ -116,5 +116,64 @@ public class TreeNodeU {
     }
 
 
+    public static TreeNode getTreeNode3(){
+        /**
+         *   		 5
+         *         /  \
+         *       4     3
+         *     /      /
+         *    3      2
+         */
+
+        TreeNode root = new TreeNode(5);
+        TreeNode level_1_1 = new TreeNode(4);
+        TreeNode level_1_2 = new TreeNode(3);
+
+        TreeNode level_2_1 = new TreeNode(3);
+        TreeNode level_2_3 = new TreeNode(2);
+
+
+        root.left = level_1_1;
+        root.right = level_1_2;
+
+        level_1_1.left = level_2_1;
+        level_1_2.left = level_2_3;
+
+        return root;
+    }
+
+
+
+    public static TreeNode getTreeNode4(){
+        /**
+         *   		 5
+         *         /  \
+         *       4     3
+         *     / \    / \
+         *    3  1   2   6
+         */
+
+        TreeNode root = new TreeNode(5);
+        TreeNode level_1_1 = new TreeNode(4);
+        TreeNode level_1_2 = new TreeNode(3);
+
+        TreeNode level_2_1 = new TreeNode(3);
+        TreeNode level_2_2 = new TreeNode(1);
+        TreeNode level_2_3 = new TreeNode(2);
+        TreeNode level_2_4 = new TreeNode(6);
+
+
+        root.left = level_1_1;
+        root.right = level_1_2;
+
+        level_1_1.left = level_2_1;
+        level_1_1.right = level_2_2;
+        level_1_2.left = level_2_3;
+        level_1_2.right = level_2_4;
+
+        return root;
+    }
+
+
 
 }
