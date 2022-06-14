@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,18 +22,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class AActivity extends AppCompatActivity {
 
-    private Button tv_a;
+    private Button tv_a, btn;
+
+    private transient volatile int anInt;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.e("==a_activity", "onCreate");
         setContentView(R.layout.a_layout);
 
 
         tv_a = findViewById(R.id.tv_a);
+        btn = findViewById(R.id.btn);
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                tv_a.setText("我是子线程中设置UI");
+            }
+        }).start();
 
 
         findViewById(R.id.btn).setOnClickListener(v -> {
@@ -45,34 +59,20 @@ public class AActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-        tv_a.setOnTouchListener(new View.OnTouchListener() {
+        tv_a.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        Log.e("a_activity", "ACTION_DOWN");
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        Log.e("a_activity", "ACTION_MOVE");
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        Log.e("a_activity", "ACTION_UP");
-                        break;
-
-                }
-
-                return true;
+            public void onClick(View v) {
+                startActivity(new Intent(AActivity.this, AActivity.class));
             }
         });
 
-
-
-
-
-        tv_a.setOnClickListener(v -> Toast.makeText(AActivity.this, "aaa", Toast.LENGTH_SHORT).show());
-
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_a.setText("我是加载过的额");
+                startActivity(new Intent(AActivity.this, MainActivity.class));
+            }
+        });
     }
 
     private String getStr() {
@@ -89,6 +89,12 @@ public class AActivity extends AppCompatActivity {
         builder.show();
     }
 
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.e("==a_activity", "onNewIntent");
+    }
 
     @Override
     protected void onStart() {
@@ -140,14 +146,14 @@ public class AActivity extends AppCompatActivity {
     }
 
 
-
-
     private Handler handler = new Handler();
 
+    private void test() {
 
 
-    private void  test(){
+        StringBuffer sb = new StringBuffer();
 
-        Looper.prepare();
+
+
     }
 }

@@ -1,7 +1,10 @@
 package com.hongxin.junit.testpro;
 
+import android.os.Looper;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Test implements Parcelable {
     String a;
@@ -34,5 +37,8 @@ public class Test implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(a);
         dest.writeString(b);
+
+        Looper.prepare();
+
     }
 }

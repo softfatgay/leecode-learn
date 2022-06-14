@@ -12,12 +12,12 @@ public class LeetCode21 {
         ListNode node1 = ListNodeU.getListNode(arr1);
 
 
-//        mergeListNode(node, node1);
+        mergeListNode(node, node1);
 
-        ListNode node2 = mergeListNode1(node, node1);
+//        ListNode node2 = mergeListNode1(node, node1);
 
 
-        ListNodeU.printNode(node2);
+//        ListNodeU.printNode(node2);
 
 
     }
